@@ -54,19 +54,19 @@ public class GenericTypeInfoTest {
                 serTree,
                 equalTo(
                         "GenericTypeInfo (PojoWithCollectionGeneric)\n"
-                                + "    pojos:java.util.List\n"
-                                + "    key:int\n"
-                                + "    sqlDate:java.sql.Date\n"
-                                + "    bigInt:java.math.BigInteger\n"
                                 + "    bigDecimalKeepItNull:java.math.BigDecimal\n"
                                 + "        intVal:java.math.BigInteger\n"
                                 + "        scale:int\n"
+                                + "    bigInt:java.math.BigInteger\n"
+                                + "    key:int\n"
+                                + "    makeMeGeneric:org.apache.flink.test.operators.util.CollectionDataSets$PojoWithDateAndEnum\n"
+                                + "        cat:org.apache.flink.test.operators.util.CollectionDataSets$Category (is enum)\n"
+                                + "        date:java.util.Date\n"
+                                + "        group:java.lang.String\n"
+                                + "    mixed:java.util.List\n"
+                                + "    pojos:java.util.List\n"
                                 + "    scalaBigInt:scala.math.BigInt\n"
                                 + "        bigInteger:java.math.BigInteger\n"
-                                + "    mixed:java.util.List\n"
-                                + "    makeMeGeneric:org.apache.flink.test.operators.util.CollectionDataSets$PojoWithDateAndEnum\n"
-                                + "        group:java.lang.String\n"
-                                + "        date:java.util.Date\n"
-                                + "        cat:org.apache.flink.test.operators.util.CollectionDataSets$Category (is enum)\n"));
+                                + "    sqlDate:java.sql.Date\n"));
     }
 }
