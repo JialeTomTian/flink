@@ -37,6 +37,7 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Optional;
 import java.util.Random;
 
@@ -298,7 +299,16 @@ public final class Utils {
 
     private static String getGenericTypeTree(Class<?> type, int indent) {
         String ret = "";
-        for (Field field : type.getDeclaredFields()) {
+        Field[] fields = type.getDeclaredFields();
+        Arrays.sort(
+                fields,
+                new Comparator<Field>() {
+                    @Override
+                    public int compare(Field f1, Field f2) {
+                        return f1.getName().compareTo(f2.getName());
+                    }
+                });
+        for (Field field : fields) {
             if (Modifier.isStatic(field.getModifiers())
                     || Modifier.isTransient(field.getModifiers())) {
                 continue;
